@@ -2,154 +2,249 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serene Wong | Link Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Serene Wong | Professional Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* High-End Pale Blue Theme */
+        /* Base Colors - Inspired by the reference image */
         :root {
-            --bg-color: #e8f4f8; /* Soft Pale Blue Background */
-            --card-bg: #ffffff; /* White Card Background */
-            --text-color: #333333; /* Dark Gray Text */
-            --primary-color: #1e3a8a; /* Deep Blue Accent Color */
-            --hover-bg: #dbeaf3; /* Lighter Hover Background */
-            --border-color: #b3cde0; /* Border Color */
+            --bg-color: #f7f3ed; /* Soft, warm beige background */
+            --card-bg: #ffffff; /* White card background */
+            --text-color: #333333; /* Dark gray text */
+            --accent-color: #7b8e72; /* Subtle green/gray accent for links/borders */
+            --hover-bg: #e0dcd4; /* Lighter hover background */
+            --border-color: #d8d3cb; /* Soft border color */
+            --light-text: #888888; /* Lighter text for descriptions */
         }
 
-        /* General Styles - POPPINS is declared as the main font */
+        /* General Styles */
         body {
-            font-family: 'Poppins', sans-serif; /* Poppins as the primary text font */
+            font-family: 'Poppins', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            transition: background-color 0.5s ease;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            position: relative;
         }
+
+        /* If you have a texture background image, replace the body bg-color and uncomment this: */
+        /*
+        body {
+            background-image: url('YOUR_BACKGROUND_TEXTURE_IMAGE_RAW_URL');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: var(--bg-color); // Fallback color
+        }
+        */
 
         .container {
             width: 100%;
-            max-width: 420px;
-            padding: 20px;
+            max-width: 400px; /* Slightly wider container for better feel */
+            margin: 0 auto;
             text-align: center;
+            position: relative;
+            background-color: var(--card-bg); /* Main content background */
+            border-radius: 15px; /* Soft rounded corners for the whole content area */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Overall subtle shadow */
+            padding-bottom: 30px; /* Padding for bottom section */
+            overflow: hidden; /* Ensure banner corners are clipped */
         }
 
-        /* Profile Section */
-        .profile h1 {
-            font-family: 'Montserrat', sans-serif; /* Title uses Montserrat */
-            font-size: 2.5em;
-            margin-bottom: 5px;
-            color: var(--primary-color);
+        /* Top Banner Section */
+        .banner {
+            width: 100%;
+            height: 120px; /* Adjust height as needed */
+            background-image: url('https://via.placeholder.com/400x120/d1c7b8/5e5040?text=Your+Banner+Image'); /* Placeholder banner */
+            background-size: cover;
+            background-position: center;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            position: relative;
         }
-        .profile p {
-            font-size: 0.9em;
-            color: #6c757d;
-            margin-bottom: 30px;
+        /* Optional: Add a subtle overlay to the banner for text clarity */
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1); /* Slight dark overlay */
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
         }
-        .profile .avatar {
+
+
+        /* Profile Avatar */
+        .profile-avatar {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 20px;
-            border: 4px solid var(--primary-color);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 4px solid var(--card-bg); /* White border to separate from banner */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for avatar */
+            position: absolute;
+            top: 70px; /* Adjust to overlap banner */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
         }
 
-        /* Link Card Styles */
-        .link-card {
+        /* Name and Description */
+        .name-description {
+            margin-top: 60px; /* Space for avatar */
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+        .name-description h1 {
+            font-family: 'Great Vibes', cursive; /* Elegant script font for name */
+            font-size: 3em;
+            margin: 0;
+            line-height: 1.2;
+            color: #5d5761; /* Darker, sophisticated name color */
+            /* If 'Serene Wong' is an image, replace h1 with this: */
+            /*
+            <img src="YOUR_SERENE_WONG_IMAGE_RAW_URL" alt="Serene Wong" style="max-width: 80%; height: auto; margin-bottom: 5px;">
+            */
+        }
+        .name-description p {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 0.9em;
+            color: var(--light-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* Link Buttons (Capsule style) */
+        .link-button {
             display: block;
             background-color: var(--card-bg);
             color: var(--text-color);
             text-decoration: none;
-            padding: 18px 25px;
-            margin: 15px 0;
-            border-radius: 15px;
+            padding: 15px 25px;
+            margin: 15px 25px; /* Horizontal margin for inner spacing */
+            border-radius: 30px; /* Pill/capsule shape */
             border: 1px solid var(--border-color);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
             transition: all 0.3s ease;
-        }
-        .link-card:hover {
-            background-color: var(--hover-bg);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .link-card span {
-            font-weight: 700;
-            font-size: 1.2em;
-            font-family: 'Montserrat', sans-serif; /* Link title uses Montserrat */
-            display: block;
-        }
-
-        /* Contact Info Styles */
-        .contact-info {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            text-align: left;
-        }
-        .contact-info h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3em;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-        .contact-info div {
-            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
             font-size: 1em;
+            display: flex; /* For icon and text alignment */
+            align-items: center;
+            justify-content: center;
+        }
+        .link-button:hover {
+            background-color: var(--hover-bg);
+            transform: translateY(-2px); /* Subtle lift */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+        }
+        .link-button i {
+            margin-right: 10px;
+            color: var(--accent-color); /* Icon color */
+        }
+
+        /* Contact Icons at the bottom */
+        .social-icons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 25px; /* Space between icons */
+        }
+        .social-icons a {
+            color: var(--accent-color);
+            font-size: 1.8em;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        .social-icons a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Footer for contact info */
+        .contact-details {
+            margin-top: 40px;
+            padding: 20px 25px;
+            text-align: left;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9em;
+            color: var(--light-text);
+        }
+        .contact-details p {
+            margin-bottom: 8px;
             line-height: 1.4;
         }
-        /* KEY FIX: Apply Poppins specifically to the strong/bold tags */
-        .contact-info div strong {
-            font-family: 'Poppins', sans-serif !important; /* Use !important to override browser default */
-            font-weight: 700;
+        .contact-details strong {
+            color: var(--text-color);
+            font-weight: 600;
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="profile">
-            <img class="avatar" src="https://raw.githubusercontent.com/Jefflukez/skwrealty/main/serene%20profile.jpg" alt="Serene Wong Profile">
+        <div class="banner">
+            </div>
+
+        <img class="profile-avatar" src="https://raw.githubusercontent.com/Jefflukez/skwrealty/main/serene%20profile.jpg" alt="Serene Wong Profile">
+
+        <div class="name-description">
             <h1>Serene Wong</h1>
             <p>Real Estate | Food Distribution | Retail</p>
         </div>
 
-        <a href="https://skwrealty.com/" target="_blank" class="link-card">
-            <span>🏡 SKW Realty</span>
+        <a href="https://skwrealty.com/" target="_blank" class="link-button">
+            <i class="fas fa-home"></i> SKW Realty
         </a>
 
-        <a href="https://mayfood.com/" target="_blank" class="link-card">
-            <span>🍕 Mayfood Distribution</span>
+        <a href="https://mayfood.com/" target="_blank" class="link-button">
+            <i class="fas fa-pizza-slice"></i> Mayfood Distribution
         </a>
 
-        <a href="https://katy-supermarket.ueniweb.com/" target="_blank" class="link-card">
-            <span>🛒 Sun Wing Katy Supermarket</span>
+        <a href="https://katy-supermarket.ueniweb.com/" target="_blank" class="link-button">
+            <i class="fas fa-shopping-cart"></i> Sun Wing Katy Supermarket
         </a>
 
-        <a href="https://www.instagram.com/skwtxrealty/" target="_blank" class="link-card">
-            <span>📸 Instagram</span>
+        <a href="https://www.instagram.com/skwtxrealty/" target="_blank" class="link-button">
+            <i class="fab fa-instagram"></i> Instagram
         </a>
 
-        <a href="https://www.facebook.com/swong0530" target="_blank" class="link-card">
-            <span>🔗 Facebook Page</span>
+        <a href="https://www.facebook.com/swong0530" target="_blank" class="link-button">
+            <i class="fab fa-facebook-f"></i> Facebook Page
         </a>
 
-        <div class="contact-info">
-            <h2>Contact Information</h2>
-            <div>📞 <strong>Phone:</strong> 281-636-5113</div>
-            <div>📧 <strong>Email:</strong> serene.wong@skwrealty.com</div>
-            <div>📍 <strong>Address:</strong> 6650 Corporate Dr B, Houston, TX 77036</div>
+        <div class="social-icons">
+            <a href="tel:2816365113"><i class="fas fa-phone"></i></a>
+            <a href="mailto:serene.wong@skwrealty.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.google.com/maps/search/6650+Corporate+Dr+B,+Houston,+TX+77036" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+
+        <div class="contact-details">
+            <p><strong>Phone:</strong> 281-636-5113</p>
+            <p><strong>Email:</strong> serene.wong@skwrealty.com</p>
+            <p><strong>Address:</strong> 6650 Corporate Dr B, Houston, TX 77036</p>
         </div>
 
     </div>
+
+</body>
+</html></title>
+</head>
+<body>
+
 </body>
 </html>
